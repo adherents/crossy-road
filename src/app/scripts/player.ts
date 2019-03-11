@@ -1,6 +1,4 @@
-// import { keyboard } from './keyboard';
 import { images } from './images';
-import { container } from './container';
 
 class Player extends PIXI.Sprite {
   constructor() {
@@ -67,9 +65,9 @@ class Player extends PIXI.Sprite {
 
 }
 
-export const player = new Player();
+const player = new Player();
+export default player;
 
-container.addChild(player);
 const left = player.keyboard(37),
       up = player.keyboard(38),
       right = player.keyboard(39),
@@ -84,7 +82,7 @@ left.press = () => {
 
 up.press = () => {
   player.playerMove(0, -50);
-  if (player.y < -75) {
+  if (player.y < 0) {
     player.y += 50;
   }
 };

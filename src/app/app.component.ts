@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { images } from './scripts/images';
-import { container } from './scripts/container';
-import { player } from './scripts/player';
+import player from './scripts/player';
+import levelContainer from './scripts/level';
 
 declare const PIXI: typeof import('pixi.js');
+const container = new PIXI.Container();
 
 @Component({
   selector: 'cr-root',
@@ -22,19 +22,12 @@ export class AppComponent implements OnInit {
       backgroundColor: 0x1099bb
     });
     this.pixiContainer.nativeElement.appendChild(this.app.view);
+    PIXI.loader.load(this.setup.bind(this));
+  }
 
-    const boy = PIXI.Sprite.fromImage(images.water);
-    boy.position.set(0, 0);
-    const car = PIXI.Sprite.fromImage(images.car);
-    car.position.set(50, 50);
-    const barrel = PIXI.Sprite.fromImage(images.barrel);
-    barrel.position.set(100, 100);
-
-    container.addChild(boy);
-    container.addChild(car);
-    container.addChild(barrel);
+  setup() {
+    container.addChild(levelContainer);
     container.addChild(player);
-
     this.app.stage.addChild(container);
   }
 }
