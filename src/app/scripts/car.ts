@@ -71,11 +71,9 @@ function carsRender() {
 carsRender();
 
 let carsCount = carsLength;
-let timer = (Math.floor(Math.random() * 2001) + 1000);
 setInterval(function() {
   carsCount += carsLength;
-  timer = (Math.floor(Math.random() * 2001) + 1000);
   addCars(carsCount);
   placeCars();
   carsRender();
-}, timer);
+}, (Math.floor(Math.random() * 2001) + 1000));
