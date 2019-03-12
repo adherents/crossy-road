@@ -1,8 +1,7 @@
 import { images } from './images';
 import { lines } from './level';
 
-const carsContainer = new PIXI.Container();
-export default carsContainer;
+export const carsContainer = new PIXI.Container();
 
 class Car extends PIXI.Sprite {
   speed: number;
@@ -13,7 +12,7 @@ class Car extends PIXI.Sprite {
     this.scale.set(-1, 1);
     this.anchor.set(0.5);
     this.y = 0;
-    this.speed = 1;
+    this.speed = 3;
   }
 }
 
