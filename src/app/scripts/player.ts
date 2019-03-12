@@ -65,8 +65,7 @@ class Player extends PIXI.Sprite {
 
 }
 
-const player = new Player();
-export default player;
+export const player = new Player();
 
 const left = player.keyboard(37),
       up = player.keyboard(38),

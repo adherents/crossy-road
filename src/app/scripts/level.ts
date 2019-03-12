@@ -2,8 +2,7 @@ import { images } from './images';
 import { Texture } from 'pixi.js';
 import { levelSettings } from './level-settings';
 
-const levelContainer = new PIXI.Container();
-export default levelContainer;
+export const levelContainer = new PIXI.Container();
 
 const dirt = PIXI.Texture.fromImage(images.dirt);
 const road = PIXI.Texture.fromImage(images.road);
@@ -28,14 +27,15 @@ class LevelMap extends PIXI.Sprite {
 
 let levelHeight = 25;
 
-const roadLines: Array<number> = [];
-const waterLines: Array<number> = [];
-const grassLines: Array<number> = [];
+export const dirtLines: Array<number> = [];
+export const roadLines: Array<number> = [];
+export const waterLines: Array<number> = [];
+export const grassLines: Array<number> = [];
 
 export function dirtMap(count: number) {
   const dirtMap = new LevelMap(dirt, count);
   for (let i = levelHeight; i <= levelHeight; i += 50) {
-    roadLines.push(i);
+    dirtLines.push(i);
   }
 }
 
@@ -59,5 +59,11 @@ export function grassMap(count: number) {
     grassLines.push(i);
   }
 }
+
+export const lines = {
+  roadLines: roadLines,
+  waterLines: waterLines,
+  grassLines: grassLines
+};
 
 levelSettings();

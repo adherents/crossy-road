@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import player from './scripts/player';
-import levelContainer from './scripts/level';
+import { player } from './scripts/player';
+import { levelContainer } from './scripts/level';
+import carsContainer, { carsMove } from './scripts/car';
 
 declare const PIXI: typeof import('pixi.js');
 const container = new PIXI.Container();
@@ -27,7 +28,12 @@ export class AppComponent implements OnInit {
 
   setup() {
     container.addChild(levelContainer);
+    container.addChild(carsContainer);
     container.addChild(player);
     this.app.stage.addChild(container);
+
+    this.app.ticker.add(function(delta: number) {
+      carsMove(delta);
+    });
   }
 }
