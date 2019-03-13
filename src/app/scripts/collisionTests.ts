@@ -1,5 +1,6 @@
 import { trees } from './tree';
 import { player } from './player';
+import { carsController } from './movableObjects';
 
 class Test {
   treeCheck(horizontal: boolean, value: number) {
@@ -10,6 +11,14 @@ class Test {
         } else {
           player.y += value;
         }
+      }
+    });
+  }
+
+  carCheck() {
+    carsController.objects.forEach(function(item, i, arr) {
+      if (hitTestRectangle(player, item)) {
+        player.playerHurt();
       }
     });
   }

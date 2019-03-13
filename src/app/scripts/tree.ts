@@ -6,6 +6,7 @@ export const treesContainer = new PIXI.Container();
 class Tree extends PIXI.Sprite {
   constructor() {
     super(PIXI.Texture.fromImage(images.tree));
+    this.anchor.set(0.5);
     this.x = 25;
   }
 }
@@ -35,8 +36,8 @@ function placeTrees() {
       p = 0;
     }
     const treesLine = lines.grassLines[p] - 50;
-    trees[i].y = treesLine - 20;
-    trees[i].x += ((Math.floor((Math.random() * 11))) * 50) + 25;
+    trees[i].y = treesLine;
+    trees[i].x += ((Math.floor((Math.random() * 11))) * 50);
     if (i - 1 < 0) {
     } else if (trees[i - 1].x === trees[i].x) {
       trees[i].x += ((Math.floor((Math.random() * 12))) * 50) + 50;

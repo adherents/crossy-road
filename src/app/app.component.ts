@@ -5,6 +5,7 @@ import { levelContainer } from './scripts/level';
 import { treesContainer } from './scripts/tree';
 import { carsContainer, boxesContainer, objectsMove } from './scripts/movableObjects';
 import { lifesContainer } from './scripts/playersLife';
+import { tests } from './scripts/collisionTests';
 
 declare const PIXI: typeof import('pixi.js');
 const container = new PIXI.Container();
@@ -38,6 +39,7 @@ export class AppComponent implements OnInit {
     this.app.stage.addChild(container);
 
     this.app.ticker.add(function(delta: number) {
+      tests.carCheck();
       objectsMove(delta);
     });
   }

@@ -1,11 +1,29 @@
 import { images } from './images';
 import { tests } from './collisionTests';
+import { lifes, lifesContainer } from './playersLife';
 
 class Player extends PIXI.Sprite {
+  heatPoints = lifes.length;
+
   constructor() {
     super(PIXI.Texture.fromImage(images.boy));
-    this.x = 315;
-    this.y = 550;
+    this.anchor.set(0.5);
+    this.x = 325;
+    this.y = 575;
+  }
+
+  playerHurt() {
+    this.y = 575;
+    this.lifesMinus();
+  }
+
+  lifesMinus() {
+    this.heatPoints --;
+    lifesContainer.removeChild(lifes[this.heatPoints]);
+    if (this.heatPoints <= 0) {
+      this.heatPoints = 0;
+      this.y = 0;
+    }
   }
 
   playerMove(offsetX: number, offsetY: number) {
@@ -63,7 +81,6 @@ class Player extends PIXI.Sprite {
     };
     return key;
   }
-
 }
 
 export const player = new Player();

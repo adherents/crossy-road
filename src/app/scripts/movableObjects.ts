@@ -11,7 +11,6 @@ class LaneObject extends PIXI.Sprite {
     super(PIXI.Texture.fromImage(image));
     this.scale.set(-1, 1);
     this.anchor.set(0.5);
-    this.y = 0;
     this.speed = 3;
     this.completed = false;
   }
@@ -72,9 +71,11 @@ class ObjectController {
       if (this.lefts.indexOf(obj.lane) >= 0) {
         obj.startPoint = 1; // left
         obj.scale.set(1, -1);
+        obj.y = obj.y;
       } else {
         obj.x = 550;
         obj.startPoint = -1; // right
+        obj.y = obj.y;
       }
       this.objects.push(obj);
       this.container.addChild(obj);
@@ -90,8 +91,8 @@ const maxCars = lines.roadLines.length * 3; // maximum cars on the roads
 const maxBoxes = lines.roadLines.length; // maximum barrels on the rivers, could be 0
 
 // create controllers for different objects
-const carsController = new ObjectController(lines.roadLines, carsContainer, maxCars, images.car);
-const boxesController = new ObjectController(lines.waterLines, boxesContainer, maxBoxes, images.doubleBox);
+export const carsController = new ObjectController(lines.roadLines, carsContainer, maxCars, images.car);
+export const boxesController = new ObjectController(lines.waterLines, boxesContainer, maxBoxes, images.doubleBox);
 
 // here move objects from objects controller
 export function objectsMove(delta: number) {
