@@ -5,7 +5,7 @@ class Player extends PIXI.Sprite {
   constructor() {
     super(PIXI.Texture.fromImage(images.boy));
     this.x = 315;
-    this.y = 551;
+    this.y = 550;
   }
 
   playerMove(offsetX: number, offsetY: number) {

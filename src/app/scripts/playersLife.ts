@@ -35,5 +35,4 @@ export function healthRender() {
     lifesContainer.addChild(life);
   });
 }
-
 healthRender();
