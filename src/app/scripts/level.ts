@@ -61,9 +61,9 @@ export function grassMap(count: number) {
 }
 
 export const lines = {
-  roadLines: roadLines,
-  waterLines: waterLines,
-  grassLines: grassLines
+  roadLines,
+  waterLines,
+  grassLines
 };
 
 levelSettings();
