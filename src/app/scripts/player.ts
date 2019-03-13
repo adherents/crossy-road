@@ -1,4 +1,5 @@
 import { images } from './images';
+import { tests } from './collisionTests';
 
 class Player extends PIXI.Sprite {
   constructor() {
@@ -77,6 +78,7 @@ left.press = () => {
   if (player.x < 0 ) {
     player.x += 50;
   }
+  tests.treeCheck(true, 50);
 };
 
 up.press = () => {
@@ -84,6 +86,7 @@ up.press = () => {
   if (player.y < 0) {
     player.y += 50;
   }
+  tests.treeCheck(false, 50);
 };
 
 right.press = () => {
@@ -91,6 +94,7 @@ right.press = () => {
   if (player.x > 600) {
     player.x -= 50;
   }
+  tests.treeCheck(true, -50);
 };
 
 down.press = () => {
@@ -98,4 +102,5 @@ down.press = () => {
   if (player.y > 600) {
     player.y -= 50;
   }
+  tests.treeCheck(false, -50);
 };
