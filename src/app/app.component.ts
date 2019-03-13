@@ -4,6 +4,7 @@ import { player } from './scripts/player';
 import { levelContainer } from './scripts/level';
 import { treesContainer } from './scripts/tree';
 import { carsContainer, boxesContainer, objectsMove } from './scripts/movableObjects';
+import { lifesContainer } from './scripts/playersLife';
 
 declare const PIXI: typeof import('pixi.js');
 const container = new PIXI.Container();
@@ -32,6 +33,7 @@ export class AppComponent implements OnInit {
     container.addChild(carsContainer);
     container.addChild(boxesContainer);
     container.addChild(treesContainer);
+    container.addChild(lifesContainer);
     container.addChild(player);
     this.app.stage.addChild(container);
 

@@ -87,7 +87,7 @@ export const carsContainer = new PIXI.Container();
 export const boxesContainer = new PIXI.Container();
 
 const maxCars = lines.roadLines.length * 3; // maximum cars on the roads
-const maxBoxes = 0; // maximum barrels on the rivers, could be 0
+const maxBoxes = lines.roadLines.length; // maximum barrels on the rivers, could be 0
 
 // create controllers for different objects
 const carsController = new ObjectController(lines.roadLines, carsContainer, maxCars, images.car);
