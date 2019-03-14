@@ -1,5 +1,5 @@
-import { images } from './images';
-import { tests } from './collisionTests';
+import { images } from '../gameMap/images';
+import { tests } from '../collisionTests';
 import { lifes, lifesContainer } from './playersLife';
 
 class Player extends PIXI.Sprite {

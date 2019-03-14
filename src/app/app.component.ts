@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { player } from './scripts/player';
-import { levelContainer } from './scripts/level';
-import { treesContainer } from './scripts/tree';
-import { carsContainer, boxesContainer, objectsMove } from './scripts/movableObjects';
-import { lifesContainer } from './scripts/playersLife';
+import { player } from './scripts/gameObjects/player';
+import { levelContainer } from './scripts/gameMap/level';
+import { treesContainer } from './scripts/gameObjects/tree';
+import { carsContainer, boxesContainer, objectsMove } from './scripts/gameObjects/movableObjects';
+import { lifesContainer } from './scripts/gameObjects/playersLife';
 import { tests } from './scripts/collisionTests';
 import { endGameContainer } from './scripts/gameOverScreen';
 

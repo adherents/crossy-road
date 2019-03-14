@@ -1,4 +1,4 @@
-import { images } from './images';
+import { images } from './gameMap/images';
 
 export const endGameContainer = new PIXI.Container();
 

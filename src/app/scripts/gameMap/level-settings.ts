@@ -1,5 +1,6 @@
 import { grassMap, waterMap, roadMap, dirtMap } from './level';
 
+// add lines only one by one
 export function levelSettings() {
   dirtMap(1); // end-game line
 

@@ -1,5 +1,5 @@
-import { images } from './images';
-import { lines } from './level';
+import { images } from '../gameMap/images';
+import { lines } from '../gameMap/level';
 
 export const treesContainer = new PIXI.Container();
 

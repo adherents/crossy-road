@@ -1,8 +1,8 @@
-import { trees } from './tree';
-import { player } from './player';
-import { carsController, boxesController } from './movableObjects';
+import { trees } from './gameObjects/tree';
+import { player } from './gameObjects/player';
+import { carsController, boxesController } from './gameObjects/movableObjects';
 import { endGame } from './gameOverScreen';
-import { lines } from './level';
+import { lines } from './gameMap/level';
 
 class Test {
   treeCheck(horizontal: boolean, value: number) {
@@ -30,9 +30,6 @@ class Test {
       if (hitTestRectangle(player, item)) {
         player.x = item.x;
         player.y = item.y;
-        /* if (player.x >= 650 || player.x <= -50) {
-          endGame('YOU FAILED!');
-        } */
       }
     });
   }
