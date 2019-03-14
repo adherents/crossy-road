@@ -30,9 +30,9 @@ class Test {
       if (hitTestRectangle(player, item)) {
         player.x = item.x;
         player.y = item.y;
-        if (player.x >= 650 || player.x <= -50) {
+        /* if (player.x >= 650 || player.x <= -50) {
           endGame('YOU FAILED!');
-        }
+        } */
       }
     });
   }
@@ -57,6 +57,8 @@ class Test {
       endGame('YOU FAILED!');
     } else if (player.y <= 50 || player.y >= 600) {
       endGame('YOU WON!');
+    } else if (player.x >= 650 || player.x <= -50) {
+      endGame('YOU FAILED!');
     }
   }
 }
