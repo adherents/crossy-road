@@ -6,9 +6,10 @@ import { treesContainer } from './scripts/tree';
 import { carsContainer, boxesContainer, objectsMove } from './scripts/movableObjects';
 import { lifesContainer } from './scripts/playersLife';
 import { tests } from './scripts/collisionTests';
+import { endGameContainer } from './scripts/gameOverScreen';
 
 declare const PIXI: typeof import('pixi.js');
-const container = new PIXI.Container();
+export const appContainer = new PIXI.Container();
 
 @Component({
   selector: 'cr-root',
@@ -30,17 +31,19 @@ export class AppComponent implements OnInit {
   }
 
   setup() {
-    container.addChild(levelContainer);
-    container.addChild(carsContainer);
-    container.addChild(boxesContainer);
-    container.addChild(treesContainer);
-    container.addChild(lifesContainer);
-    container.addChild(player);
-    this.app.stage.addChild(container);
+    appContainer.addChild(levelContainer);
+    appContainer.addChild(carsContainer);
+    appContainer.addChild(boxesContainer);
+    appContainer.addChild(treesContainer);
+    appContainer.addChild(lifesContainer);
+    appContainer.addChild(player);
+    this.app.stage.addChild(appContainer);
+    this.app.stage.addChild(endGameContainer);
 
     this.app.ticker.add(function(delta: number) {
       tests.carCheck();
       tests.boxCheck();
+      tests.endGameCheck();
       objectsMove(delta);
     });
   }

@@ -1,6 +1,8 @@
 import { trees } from './tree';
 import { player } from './player';
 import { carsController, boxesController } from './movableObjects';
+import { appContainer } from '../app.component';
+import { endGame } from './gameOverScreen';
 
 class Test {
   treeCheck(horizontal: boolean, value: number) {
@@ -28,11 +30,21 @@ class Test {
       if (hitTestRectangle(player, item)) {
         player.x = item.x;
         player.y = item.y;
-        if (player.x >= 600 || player.x <= 0) {
+        if (player.x >= 650 || player.x <= -50) {
           player.playerHurt();
         }
       }
     });
+  }
+
+  endGameCheck() {
+    if (player.heatPoints <= 0) {
+      endGame('YOU FAILED!');
+      return appContainer.visible = false;
+    } else if (player.y <= 50) {
+      endGame('YOU WON!');
+      return appContainer.visible = false;
+    }
   }
 }
 
