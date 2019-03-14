@@ -1,27 +1,12 @@
 # CrossyRoad
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+This is a simple game in the style of a so popular game [Crossy Road](https://play.google.com/store/apps/details?id=com.yodo1.crossyroad). This project was created via [Angular 7](https://angular.io/) and [PixiJS](http://www.pixijs.com/).
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+npm install
+npm start
+```
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This will run a dev server on localhost:4200.
