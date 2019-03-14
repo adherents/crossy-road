@@ -1,6 +1,6 @@
 import { trees } from './tree';
 import { player } from './player';
-import { carsController } from './movableObjects';
+import { carsController, boxesController } from './movableObjects';
 
 class Test {
   treeCheck(horizontal: boolean, value: number) {
@@ -19,6 +19,18 @@ class Test {
     carsController.objects.forEach(function(item, i, arr) {
       if (hitTestRectangle(player, item)) {
         player.playerHurt();
+      }
+    });
+  }
+
+  boxCheck() {
+    boxesController.objects.forEach(function(item, i, arr) {
+      if (hitTestRectangle(player, item)) {
+        player.x = item.x;
+        player.y = item.y;
+        if (player.x >= 600 || player.x <= 0) {
+          player.playerHurt();
+        }
       }
     });
   }

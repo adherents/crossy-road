@@ -10,9 +10,9 @@ export function levelSettings() {
   grassMap(1);
   grassMap(1);
   roadMap(1);
-  waterMap(1);
   grassMap(1);
   roadMap(1);
+  waterMap(1);
 
   dirtMap(1); // start-game line
 }

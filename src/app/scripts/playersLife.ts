@@ -23,7 +23,7 @@ generateHealth(2);
 function placeHealth() {
   let healthNext = 0;
   lifes.forEach(function (life, i, arr) {
-    lifes[i].x = 600 - (lifes.length * 50);
+    lifes[i].x = 160 - (lifes.length * 50);
     lifes[i].x += healthNext;
     healthNext += 50;
   });

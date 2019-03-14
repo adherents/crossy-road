@@ -40,6 +40,7 @@ export class AppComponent implements OnInit {
 
     this.app.ticker.add(function(delta: number) {
       tests.carCheck();
+      tests.boxCheck();
       objectsMove(delta);
     });
   }

@@ -13,6 +13,7 @@ class Player extends PIXI.Sprite {
   }
 
   playerHurt() {
+    this.x = 325;
     this.y = 575;
     this.lifesMinus();
   }
@@ -22,7 +23,7 @@ class Player extends PIXI.Sprite {
     lifesContainer.removeChild(lifes[this.heatPoints]);
     if (this.heatPoints <= 0) {
       this.heatPoints = 0;
-      this.y = 0;
+      this.y = 25;
     }
   }
 
