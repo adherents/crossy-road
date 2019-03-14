@@ -1,8 +1,8 @@
 import { trees } from './tree';
 import { player } from './player';
 import { carsController, boxesController } from './movableObjects';
-import { appContainer } from '../app.component';
 import { endGame } from './gameOverScreen';
+import { lines } from './level';
 
 class Test {
   treeCheck(horizontal: boolean, value: number) {
@@ -31,8 +31,23 @@ class Test {
         player.x = item.x;
         player.y = item.y;
         if (player.x >= 650 || player.x <= -50) {
-          player.playerHurt();
+          endGame('YOU FAILED!');
         }
+      }
+    });
+  }
+
+  waterCheck() {
+    let onBox = false;
+    boxesController.objects.forEach(function(item, a, b) {
+      if (player.x === item.x && player.y === item.y) {
+        onBox = true;
+      }
+    });
+    lines.waterLines.forEach(function(item, i, arr) {
+      if ((player.y + 50) === item && onBox === false) {
+        onBox = false;
+        player.playerHurt();
       }
     });
   }
@@ -40,10 +55,8 @@ class Test {
   endGameCheck() {
     if (player.heatPoints <= 0) {
       endGame('YOU FAILED!');
-      return appContainer.visible = false;
-    } else if (player.y <= 50) {
+    } else if (player.y <= 50 || player.y >= 600) {
       endGame('YOU WON!');
-      return appContainer.visible = false;
     }
   }
 }

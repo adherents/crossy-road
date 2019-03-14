@@ -92,7 +92,7 @@ const maxBoxes = lines.roadLines.length; // maximum barrels on the rivers, could
 
 // create controllers for different objects
 export const carsController = new ObjectController(lines.roadLines, carsContainer, maxCars, images.car);
-export const boxesController = new ObjectController(lines.waterLines, boxesContainer, maxBoxes, images.doubleBox);
+export const boxesController = new ObjectController(lines.waterLines, boxesContainer, maxBoxes, images.box);
 
 // here move objects from objects controller
 export function objectsMove(delta: number) {

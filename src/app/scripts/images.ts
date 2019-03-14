@@ -5,7 +5,6 @@ export const images = {
   boy: require('../img/boy.png'),
   car: require('../img/car.png'),
   dirt: require('../img/dirt.png'),
-  doubleBox: require('../img/doublebox.png'),
   grass: require('../img/grass.png'),
   hp: require('../img/hp.png'),
   road: require('../img/road.png'),
